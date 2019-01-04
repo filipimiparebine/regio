@@ -108,7 +108,7 @@ document.getElementsByName("station").forEach(station => {
         let timeKey = whatTime(stops);
         
         let h = stops[timeKey][0];
-        let m = stops[timeKey][0];    
+        let m = stops[timeKey][1];    
 
         if(h < 10){
             h = "0" + h;
