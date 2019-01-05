@@ -5,6 +5,7 @@ body{
     color: #171516;
     background: #fcfcfc;
     margin: 0;
+    text-align: center;
 }
 
 main{
@@ -40,7 +41,7 @@ main{
 
 .small{
     text-align: center;
-    color: #b3b3b3;
+    color: #737373;
     font-size: 13px;
 }
 
@@ -51,15 +52,16 @@ main{
     margin-left: 5px;
 }
 
-.facebook{
+.small .facebook{
     background: #3b5999;
 }
 
-.twitter{
+.small .twitter{
+    color: #171516;
     background: #55acee;
 }
 
-.tumblr{
+.small .tumblr{
     background: #34465d;
 }
 
@@ -117,18 +119,17 @@ h1{
 .link img {
     width: 20px;
     margin:0 10px;
-    opacity: 0.2;
 }
 
 .link a{
     text-decoration: none;
 }
 
-.link a:hover img{
-    opacity:1;
-}
-
 @media (min-width: 460px) {
+    body{
+        text-align: left;
+    }
+
     h1{
         font-size: 50px;
     }
