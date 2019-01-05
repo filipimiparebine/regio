@@ -81,11 +81,10 @@ h1{
 }
 
 .radio{
-    display: inline-block;
+    display: inline-grid;
     font-size: 25px;
     padding-left: 10px;
     padding-right: 10px;
-    width: 200px;
 }
 
 .radio span{
@@ -129,6 +128,11 @@ h1{
 @media (min-width: 460px) {
     h1{
         font-size: 50px;
+    }
+
+    .radio{
+        display: inline-block;
+        width: 200px;     
     }
         
 }
