@@ -32,14 +32,15 @@
                     '/index.html', //default
                     '/index.html?homescreen=1', //default
                     '/?homescreen=1', //default
+                    '/script.js',
                     '/style.css',// configure as by your site ; just an example
-                    '/images/icon/*',
                     '/images/*',// choose images to keep offline; just an example
             // Do not replace/delete/edit manifest.js paths below
                     '/manifest.js',
             //These are links to the extenal social media buttons that should be cached;
             // we have used twitter's as an example
-                    'https://platform.twitter.com/widgets.js',       
+                    'https://github.com/filipblajiu/regio',
+                    'mailto:filipblajiu@gmail.com',      
                     ]);
                     })
                     );

@@ -12,7 +12,6 @@ main{
     margin: 0 auto;
 }
 
-
 .image{
     position: relative;
 }
@@ -119,6 +118,10 @@ h1{
     width: 20px;
     margin:0 10px;
     opacity: 0.2;
+}
+
+.link a{
+    text-decoration: none;
 }
 
 .link a:hover img{
