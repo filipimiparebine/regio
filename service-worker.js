@@ -32,7 +32,8 @@
                     '/index.html', //default
                     '/index.html?homescreen=1', //default
                     '/?homescreen=1', //default
-                    '/assets/css/main.css',// configure as by your site ; just an example
+                    '/style.css',// configure as by your site ; just an example
+                    '/images/icon/*',
                     '/images/*',// choose images to keep offline; just an example
             // Do not replace/delete/edit manifest.js paths below
                     '/manifest.js',
