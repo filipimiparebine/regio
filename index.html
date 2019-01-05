@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Primary Meta Tags -->
     <title>La ce oră am tren?</title>
@@ -14,16 +13,42 @@
     <meta property="og:url" content="https://filipblajiu.github.io/regio/">
     <meta property="og:title" content="La ce oră am tren?">
     <meta property="og:description" content="Trenul 16347 de la Brașov pentru Zărnești va pleca de la linia 1. Vă rugăm poftiți în vagoane!">
-    <meta property="og:image" content="https://filipblajiu.github.io/regio/train.png">
+    <meta property="og:image" content="https://filipblajiu.github.io/regio/image/train.png">
+    <meta property="og:image:height" content="206">
+    <meta property="og:image:width" content="393">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://filipblajiu.github.io/regio/">
     <meta property="twitter:title" content="La ce oră am tren?">
     <meta property="twitter:description" content="Trenul 16347 de la Brașov pentru Zărnești va pleca de la linia 1. Vă rugăm poftiți în vagoane!">
-    <meta property="twitter:image" content="https://filipblajiu.github.io/regio/train.png">
+    <meta property="twitter:image" content="https://filipblajiu.github.io/regio/image/train.png">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="La ce oră am tren?">
+    <meta name="apple-mobile-web-app-title" content="La ce oră am tren?">
+    <meta name="msapplication-navbutton-color" content="#171516">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-starturl" content="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="/image/icon/apple-touch-icon.png?v=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="/image/icon/favicon-32x32.png?v=1.0">
+    <link rel="icon" type="image/png" sizes="192x192" href="/image/icon/android-chrome-192x192.png?v=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="/image/icon/favicon-16x16.png?v=1.0">
+    <link rel="mask-icon" href="/image/icon/safari-pinned-tab.svg?v=1.0" color="#171516">
+    <link rel="shortcut icon" href="/image/icon/favicon.ico?v=1.0">
+    <meta name="apple-mobile-web-app-title" content="La ce oră am tren?">
+    <meta name="application-name" content="La ce oră am tren?">
+    <meta name="msapplication-TileColor" content="#171516">
+    <meta name="msapplication-TileImage" content="/image/icon/mstile-144x144.png?v=1.0">
+    <meta name="msapplication-config" content="/image/icon/browserconfig.xml?v=1.0">
+    <meta name="theme-color" content="#fcfcfc">
+
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:100i,700i" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130586264-2"></script>
     <script>
@@ -33,11 +58,21 @@
 
     gtag('config', 'UA-130586264-2');
     </script>
+    <!-- register service worker -->
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(function() { console.log("Service Worker Registered, Cheers to PWA Fire!"); });
+        });
+    }  
+    </script> 
+    <!-- end of service worker -->
 </head>
 <body>
 <main>
     <div class="image">
-        <img src="train.gif" alt="">
+        <img src="./image/train.gif" alt="">
         <a class="credits" href="https://dribbble.com/shots/3815424-Train" target="_blank">i</a>
     </div>
     <p class="small">ȘER PĂ
@@ -53,10 +88,10 @@
 <footer>
     <div class="link">
         <a href="https://github.com/filipblajiu/regio">
-            <img src="./github.png" alt="">
+            <img src="./image/github.png" alt="">
         </a>
         <a href="mailto:filipblajiu@gmail.com">
-            <img src="./mail.png" alt="">
+            <img src="./image/mail.png" alt="">
         </a>
     </div>
 </footer>
