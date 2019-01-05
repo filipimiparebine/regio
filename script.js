@@ -316,6 +316,9 @@ function whatTime(stops){
         } else if( h == stops[s][0] && m < stops[s][1]){
             document.getElementById("time").dataset.departurekey = s;
             return formatTime(stops[s][0],stops[s][1]);
+        }else{
+            document.getElementById("time").dataset.departurekey = 0;
+            return formatTime(stops[0][0],stops[0][1]);
         }
     }
 }

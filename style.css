@@ -1,9 +1,10 @@
 body{
     font-family: 'IBM Plex Serif', serif;
-    text-align: center;
     font-weight: 100;
     font-style: italic;
-    color: #222;
+    color: #171516;
+    background: #fcfcfc;
+    margin: 0;
 }
 
 main{
@@ -22,7 +23,7 @@ main{
     margin: 0 auto;
 }
 
-a{
+.credits{
     text-decoration: none;
     background: #fff;
     width: 15px;
@@ -35,7 +36,32 @@ a{
     font-size: 12px;
     text-align: center;
     line-height: 15px;
-    color: #222;
+    color: #171516;
+}
+
+.small{
+    text-align: center;
+    color: #b3b3b3;
+    font-size: 13px;
+}
+
+.small a{
+    text-decoration: none;
+    color: #fff;
+    padding:2px 5px;
+    margin-left: 5px;
+}
+
+.facebook{
+    background: #3b5999;
+}
+
+.twitter{
+    background: #55acee;
+}
+
+.tumblr{
+    background: #34465d;
 }
 
 h1{
@@ -85,13 +111,22 @@ h1{
     cursor: pointer;
 }
 
-@media (min-width: 460px) {
+.link{
+    margin: 30px auto;
+    width: 85px; 
+}
 
-    body{
-        text-align: left;
-    }
-    
-    
+.link img {
+    width: 20px;
+    margin:0 10px;
+    opacity: 0.2;
+}
+
+.link a:hover img{
+    opacity:1;
+}
+
+@media (min-width: 460px) {
     h1{
         font-size: 50px;
     }
