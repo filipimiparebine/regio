@@ -1,18 +1,47 @@
 body{
+    font-family: 'IBM Plex Serif', serif;
     text-align: center;
+    font-weight: 100;
+    font-style: italic;
+    color: #222;
 }
 
 main{
     max-width: 450px;
     margin: 0 auto;
-    margin-top: 50vh;
-    transform: translateY(-50%);
-    
+}
+
+
+.image{
+    position: relative;
+}
+
+.image img{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+    background: #fff;
+    width: 15px;
+    height: 15px;
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 49px;
+    right: 5px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 15px;
+    color: #222;
 }
 
 h1{
     font-size: 35px;
     text-align: center;
+    font-weight: 700;
 }
 
 #rute{
@@ -33,8 +62,27 @@ h1{
     width: 200px;
 }
 
+.radio span{
+    cursor: pointer;
+}
+
+.radio input:checked + span{
+    text-decoration: underline;
+}
+
+.radio input{
+    visibility:hidden;
+}
+
 #control{
     text-align: center;
+}
+
+#control button{
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
 }
 
 @media (min-width: 460px) {

@@ -264,7 +264,7 @@ let transport= {
 
 
 for (let key in transport) {
-    document.getElementById("rute").innerHTML += `<label for="rute-${key}" class="radio rute" ><input type="radio" name="rute" id="rute-${key}" data-rutekey="${key}">${transport[key].rute}</label>`;
+    document.getElementById("rute").innerHTML += `<label for="rute-${key}" class="radio rute" ><input type="radio" name="rute" id="rute-${key}" data-rutekey="${key}"><span>${transport[key].rute}</span></label>`;
 }
 
 
@@ -275,7 +275,7 @@ document.getElementsByName("rute").forEach(rute => {
         let container = document.getElementById("stations");
         while (container.firstChild) container.removeChild(container.firstChild);
         for (let key in stations) {
-            container.innerHTML += `<label for="station-${key}" class="radio station" ><input type="radio" name="station" id="station-${key}" data-rutekey="${ruteKey}" data-stationkey="${key}">${stations[key].station}</label>`;
+            container.innerHTML += `<label for="station-${key}" class="radio station" ><input type="radio" name="station" id="station-${key}" data-rutekey="${ruteKey}" data-stationkey="${key}"><span>${stations[key].station}</span></label>`;
         }
         update();
         document.getElementById("previous").addEventListener("click", function(){
