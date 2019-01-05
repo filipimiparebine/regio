@@ -113,16 +113,17 @@ h1{
 
 .link{
     margin: 30px auto;
-    width: 85px; 
+    width: 105px; 
 }
 
 .link img {
-    width: 20px;
+    width: 30px;
     margin:0 10px;
 }
 
 .link a{
     text-decoration: none;
+    display: inline-block;
 }
 
 @media (min-width: 460px) {
