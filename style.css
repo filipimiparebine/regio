@@ -1,0 +1,51 @@
+body{
+    text-align: center;
+}
+
+main{
+    max-width: 450px;
+    margin: 0 auto;
+    margin-top: 50vh;
+    transform: translateY(-50%);
+    
+}
+
+h1{
+    font-size: 35px;
+    text-align: center;
+}
+
+#rute{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#stations{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.radio{
+    display: inline-block;
+    font-size: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 200px;
+}
+
+#control{
+    text-align: center;
+}
+
+@media (min-width: 460px) {
+
+    body{
+        text-align: left;
+    }
+    
+    
+    h1{
+        font-size: 50px;
+    }
+        
+}

@@ -8,15 +8,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main id="main" data-rute="0" data-station="0">
-    <input type="radio" name="rute" id="forward" checked>
-    <label for="forward">Brașov Zărnești</label>
-    <input type="radio" name="rute" id="backward">
-    <label for="backward">Zărnești Brașov</label>
+<main>
+    <h1 id="time" data-rutekey data-stationkey data-departurekey>La ce ora am tren?</h1>
+    <div id="rute"></div>
     <div id="stations"></div>
-    <h1 id="train"></h1>
-    <button id="previous">Previous</button>
-    <button id="next">Next</button>
+    <div id="control"></div>
 </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="script.js"></script>

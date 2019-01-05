@@ -31,7 +31,7 @@ let transport= {
                 }
             },
             2: {
-                "station": "Lustic H.",
+                "station": "Lustic",
                 "departure": {
                     0: [6,8],
                     1: [8,0],
@@ -218,7 +218,7 @@ let transport= {
                 }
             },
             6: {
-                "station": "Lustic H.",
+                "station": "Lustic",
                 "departure": {
                     0: [5,26],
                     1: [6,34],
@@ -263,62 +263,47 @@ let transport= {
 }
 
 
-
-let station = [
-    "Brașov",
-    "Bartolomeu",
-    "Lustic H.",
-    "Cristian",
-    "Râșnov",
-    "Râșnov H.",
-    "Tohanu Vechi Hc.",
-    "G-ral T. Moșoiu Hc.",
-    "Zărnești"
-];
-
-function stations(reverse){
-    let s = [];
-    if(reverse){
-        let r = station.slice().reverse();
-        for(let i = 0; i < station.length; i++){
-            if(i == 0){
-                s.push(`<input type="radio" name="station" id="${i}" checked><label for="${i}">${r[i]}</label>`);
-            } else {
-                s.push(`<input type="radio" name="station" id="${i}"><label for="${i}">${r[i]}</label>`);
-            }
-        }
-    } else {
-        for(let i = 0; i < station.length; i++){
-            if(i == 0){
-                s.push(`<input type="radio" name="station" id="${i}" checked><label for="${i}">${station[i]}</label>`);
-            } else {
-                s.push(`<input type="radio" name="station" id="${i}"><label for="${i}">${station[i]}</label>`);
-            }
-        }
-        
-    }
-    return s.join(" ");
+for (let key in transport) {
+    document.getElementById("rute").innerHTML += `<label for="rute-${key}" class="radio rute" ><input type="radio" name="rute" id="rute-${key}" data-rutekey="${key}">${transport[key].rute}</label>`;
 }
 
-let rute = 0,
-    next,
-    current,
-    previous;
 
-document.getElementById("forward").addEventListener("click", function(){
-    rute = 0;
-    document.getElementById("stations").innerHTML = stations(false);
-    update();
+document.getElementsByName("rute").forEach(rute => {
+    rute.addEventListener("click", function(){
+        let ruteKey = rute.dataset.rutekey;
+        let stations = transport[ruteKey].stations;
+        let container = document.getElementById("stations");
+        while (container.firstChild) container.removeChild(container.firstChild);
+        for (let key in stations) {
+            container.innerHTML += `<label for="station-${key}" class="radio station" ><input type="radio" name="station" id="station-${key}" data-rutekey="${ruteKey}" data-stationkey="${key}">${stations[key].station}</label>`;
+        }
+        update();
+        document.getElementById("previous").addEventListener("click", function(){
+            np("<");
+        });
+        
+        document.getElementById("next").addEventListener("click", function(){
+            np(">");
+        });
+    });
 });
 
-document.getElementById("backward").addEventListener("click", function(){
-    rute = 1;
-    document.getElementById("stations").innerHTML = stations(true);
-    update();
-});
+function update(){
+    document.getElementsByName("station").forEach(station => {
+        station.addEventListener("click", function(){
+            let ruteKey = station.dataset.rutekey;
+            let stationKey = station.dataset.stationkey;
+            let time = whatTime(transport[ruteKey].stations[stationKey].departure);
+            let timeContainer = document.getElementById("time");
+            timeContainer.dataset.rutekey = ruteKey;
+            timeContainer.dataset.stationkey = stationKey;
+            timeContainer.innerHTML = time;
+        });
+    });
+    document.getElementsByName("station")[0].click();
+    document.getElementById("control").innerHTML = '<button id="previous">Anterioru\'</button><button id="next">Următoru\'</button>';    
+}
 
-document.getElementById("stations").innerHTML = stations(false);
-update();
 
 function whatTime(stops){
     let time = new Date();
@@ -326,97 +311,36 @@ function whatTime(stops){
     let m = time.getMinutes();
     for (let s in stops) {
         if(h < stops[s][0]){
-            return s;
+            document.getElementById("time").dataset.departurekey = s;
+            return formatTime(stops[s][0],stops[s][1]);
         } else if( h == stops[s][0] && m < stops[s][1]){
-            return s;
+            document.getElementById("time").dataset.departurekey = s;
+            return formatTime(stops[s][0],stops[s][1]);
         }
     }
 }
 
-
-function update(){
-    let next,
-    current,
-    previous;
-    
-    let stops = transport[rute].stations[0].departure;
-    console.log(stops);
-    current = whatTime(stops);
-
-    let h = stops[current][0];
-    let m = stops[current][1];    
-
-    if(h < 10){
-        h = "0" + h;
+function formatTime(hour,minute){
+    if(hour < 10){
+        hour = "0" + hour;
     }
-    if(m < 10){
-        m = "0" + m;
+    if(minute < 10){
+        minute = "0" + minute;
     }
-
-    document.getElementById("train").innerHTML = h + ":" + m;
-
-    document.getElementsByName("station").forEach(station => {
-        station.addEventListener("click", function(){
-    
-            let stops = transport[rute].stations[station.id].departure;
-            console.log(stops);
-            current = whatTime(stops);
-    
-            let h = stops[current][0];
-            let m = stops[current][1];    
-    
-            if(h < 10){
-                h = "0" + h;
-            }
-            if(m < 10){
-                m = "0" + m;
-            }
-    
-            document.getElementById("train").innerHTML = h + ":" + m;
-            
-            document.getElementById("next").addEventListener("click", function(){
-    
-                let k = Object.keys(stops);
-                previous = current;
-                current = parseInt(current)+1 >= k.length ? 0 : parseInt(current)+1;
-                next = parseInt(current)+2 >= k.length ? 0 : parseInt(current)+2;
-                
-                let h = stops[current][0];
-                let m = stops[current][1];    
-    
-                if(h < 10){
-                    h = "0" + h;
-                }
-                if(m < 10){
-                    m = "0" + m;
-                }
-                document.getElementById("train").innerHTML = h + ":" + m;
-            });
-    
-            document.getElementById("previous").addEventListener("click", function(){
-    
-                let k = Object.keys(stops);
-                next = current;
-                current = parseInt(current)-1 < 0 ? k.length-1 : parseInt(current)-1;
-                console.log(current);
-                previous = parseInt(current)-2 < 0 ? k.length-1 : parseInt(current)-2;
-                
-                let h = stops[current][0];
-                let m = stops[current][1];    
-    
-                if(h < 10){
-                    h = "0" + h;
-                }
-                if(m < 10){
-                    m = "0" + m;
-                }
-                document.getElementById("train").innerHTML = h + ":" + m;
-            });
-            
-            l
-        });
-        
-    });
+    return hour + ":" + minute;
 }
+
+function np(symbol){
+    let ruteKey = document.getElementById("time").dataset.rutekey;
+    let stationKey = document.getElementById("time").dataset.stationkey;
+    let departureKey = parseInt(document.getElementById("time").dataset.departurekey);
+    let departure = transport[ruteKey].stations[stationKey].departure;
+    let el = Object.keys(departure).length - 1;
+    departureKey = symbol === ">" ? ++departureKey > el ? 0 : departureKey : symbol === "<" ? --departureKey < 0 ? el : departureKey : 0;
+    document.getElementById("time").innerHTML = formatTime(departure[departureKey][0],departure[departureKey][1]);
+    document.getElementById("time").dataset.departurekey = departureKey;
+}
+
+
 
 
