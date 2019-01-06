@@ -6,6 +6,7 @@
 
 Asa ca am venit cu o solutie   ![Logo](https://laceoraamtren.cf/image/icon/favicon-16x16.png) [Click aici!](https://laceoraamtren.cf/)
 
+___
 
 ### Web App ###
 
