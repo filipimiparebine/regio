@@ -72,8 +72,7 @@
     <script>
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
-            navigator.serviceWorker.register('./service-worker.js')
-                .then(function() { console.log("Service Worker Registered, Cheers to PWA Fire!"); });
+            navigator.serviceWorker.register('./service-worker.js').then();
         });
     }  
     </script> 
@@ -82,7 +81,6 @@
 <body>
 <main>
     <div class="image">
-        <!-- <img src="./image/train.webm" alt=""> -->
         <video width="450" poster="./image/train.png" playsinline autoplay muted loop>
             <source src="./image/train.webm" type="video/webm">
         </video>
@@ -108,16 +106,10 @@
         </a>
     </div>
 </footer>
-
 <script src="./fontfaceobserver.js"></script>
 <script>
 var font = new FontFaceObserver('IBM Plex Serif');
-
-font.load().then(function () {
-  console.log('Font is available');
-}, function () {
-  console.log('Font is not available');
-});
+font.load().then();
 </script>
 <script src="./script.js"></script>
 </body>
