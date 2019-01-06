@@ -28,15 +28,16 @@
             // add your entire site to the cache- as in the code below; for offline access
             // If you have some build process for your site, perhaps that could 
             // generate the list of possible URLs that a user might load.               
-                    '/', // do not remove this
-                    '/index.html', //default
-                    '/index.html?homescreen=1', //default
-                    '/?homescreen=1', //default
-                    '/script.js',
-                    '/style.css',// configure as by your site ; just an example
-                    '/images/*',// choose images to keep offline; just an example
+                    '/regio/', // do not remove this
+                    '/regio/index.html', //default
+                    '/regio/index.html?homescreen=1', //default
+                    '/regio/?homescreen=1', //default
+                    '/regio/script.js',
+                    '/regio/fontfaceobserver.js',
+                    '/regio/style.css',// configure as by your site ; just an example
+                    '/regio/image/*',// choose images to keep offline; just an example
             // Do not replace/delete/edit manifest.js paths below
-                    '/manifest.js',
+                    '/regio/manifest.js',
             //These are links to the extenal social media buttons that should be cached;
             // we have used twitter's as an example
                     'https://github.com/filipblajiu/regio',
