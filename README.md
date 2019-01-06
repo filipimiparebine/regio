@@ -1,13 +1,25 @@
-# La ce ora am tren?
+# La ce oră am tren?
 
-![Moving train](https://www.laceoraamtren.cf/image/train.gif "La ce oră am tren?")
+![Moving train](https://laceoraamtren.cf/image/train.gif "La ce oră am tren?")
 
-   Trebuia sa verific intr-un tabel mult prea mare cand am urmatorul tren.
-   A fost o problema pentru mine.
-   Acum imi e mult mai usor.
+[Tabelul](https://regiocalatori.ro/wp-content/uploads/2018/12/Brasov-Zarnesti.pdf) cu programul trenului este foarte stufos. :tired_face:
 
-   ![Logo](https://www.laceoraamtren.cf/image/icon/favicon.ico) [Link](https://www.laceoraamtren.cf/)
+Așa că am venit cu o soluție ![Logo](https://laceoraamtren.cf/image/icon/favicon-16x16.png) [Click aici!](https://laceoraamtren.cf/)
 
-   Aplicatia este publicata pe GitHubPages. Trimite notificare pentru a fi instalata si fuctioneaza offline. Domeniul [https://www.laceoraamtren.cf/](https://www.laceoraamtren.cf/) este unul gratis luat de pe [Freenom](https://www.freenom.com) pentru a servi pagina prin CDN-ul de la [CloudFlare](https://www.cloudflare.com/). Mai foloseste Google Analytics si HotJar.
+___
 
-   **Tehnologii:** `JS`, `PWA`, `GitHubPages`, `CloudFlare`
+### Web App ###
+
+:white_check_mark: Notificare de instalare
+
+:white_check_mark: Fucționează offline
+
+:white_check_mark: CDN
+
+:white_check_mark: Analytics
+
+:white_check_mark: Heatmaps
+
+___
+
+**Tehnologii:** `JS`, `PWA`, `GitHubPages`, `CloudFlare`, `Google Analytics`, `HotJar`
