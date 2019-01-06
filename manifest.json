@@ -3,7 +3,7 @@
     "short_name": "Am tren?",
     "description": "Trenul 16347 de la Brașov pentru Zărnești va pleca de la linia 1. Vă rugăm poftiți în vagoane!",
     "lang": "ro-RO",
-    "start_url": "/",
+    "start_url": "/regio/",
     "display": "standalone",
     "theme_color": "#171516",
     "background_color": "#fcfcfc",
