@@ -1,10 +1,10 @@
-# La ce ora am tren?
+# La ce oră am tren?
 
 ![Moving train](https://laceoraamtren.cf/image/train.gif "La ce oră am tren?")
 
 [Tabelul](https://regiocalatori.ro/wp-content/uploads/2018/12/Brasov-Zarnesti.pdf) cu programul trenului este foarte stufos. :tired_face:
 
-Asa ca am venit cu o solutie   ![Logo](https://laceoraamtren.cf/image/icon/favicon-16x16.png) [Click aici!](https://laceoraamtren.cf/)
+Așa că am venit cu o soluție ![Logo](https://laceoraamtren.cf/image/icon/favicon-16x16.png) [Click aici!](https://laceoraamtren.cf/)
 
 ___
 
@@ -12,7 +12,7 @@ ___
 
 :white_check_mark: Notificare de instalare
 
-:white_check_mark: Fuctioneaza offline
+:white_check_mark: Fucționează offline
 
 :white_check_mark: CDN
 
