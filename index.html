@@ -45,7 +45,6 @@
     <meta name="msapplication-config" content="./image/icon/browserconfig.xml">
     <meta name="theme-color" content="#fcfcfc">
 
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:100i,700i" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <link rel="manifest" href="./manifest.json">
 
@@ -98,6 +97,17 @@
         </a>
     </div>
 </footer>
+
+<script src="./fontfaceobserver.js"></script>
+<script>
+var font = new FontFaceObserver('IBM Plex Serif');
+
+font.load().then(function () {
+  console.log('Font is available');
+}, function () {
+  console.log('Font is not available');
+});
+</script>
 <script src="./script.js"></script>
 </body>
 </html>
