@@ -311,16 +311,16 @@ function whatTime(stops){
     let m = time.getMinutes();
     for (let s in stops) {
         if(h < stops[s][0]){
+            
             document.getElementById("time").dataset.departurekey = s;
             return formatTime(stops[s][0],stops[s][1]);
         } else if( h == stops[s][0] && m < stops[s][1]){
             document.getElementById("time").dataset.departurekey = s;
             return formatTime(stops[s][0],stops[s][1]);
-        }else{
-            document.getElementById("time").dataset.departurekey = 0;
-            return formatTime(stops[0][0],stops[0][1]);
-        }
+        }        
     }
+    document.getElementById("time").dataset.departurekey = 0;
+    return formatTime(stops[0][0],stops[0][1]);
 }
 
 function formatTime(hour,minute){
