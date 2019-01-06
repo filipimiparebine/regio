@@ -17,11 +17,13 @@ main{
 
 .image{
     position: relative;
+    overflow: hidden;
 }
 
 .image video{
     display: block;
     margin: 0 auto;
+    height: 340px;
 }
 
 .credits{
@@ -32,8 +34,8 @@ main{
     display: block;
     border-radius: 50%;
     position: absolute;
-    bottom: 44px;
-    right: 30px;
+    bottom: 49px;
+    right: 5px;
     font-size: 12px;
     text-align: center;
     line-height: 15px;
